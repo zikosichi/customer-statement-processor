@@ -2,12 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-
-// Modules
 import { AppRoutingModule } from './app-routing.module';
-// import { CustomerStatementModule } from './modules/customer-statement/customer-statement.module';
-// import { CustomerStatementModule } from './modules/customer-statement/customer-statement.module';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    // CustomerStatementModule,
     RouterModule,
     AppRoutingModule,
   ],

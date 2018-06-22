@@ -4,9 +4,11 @@ import { ReadmeService } from '../../services/readme.service';
 @Component({
   selector: 'app-readme',
   templateUrl: './readme.component.html',
-  styleUrls: ['./readme.component.css']
+  styleUrls: ['./readme.component.scss']
 })
 export class ReadmeComponent implements OnInit {
+
+  markdown: string;
 
   constructor(
     private readmeService: ReadmeService,
@@ -14,7 +16,7 @@ export class ReadmeComponent implements OnInit {
 
   ngOnInit() {
     this.readmeService.getReadme().subscribe(res => {
-      console.log(res);
+      this.markdown = res;
     });
   }
 
