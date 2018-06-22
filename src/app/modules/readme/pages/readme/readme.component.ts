@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReadmeService } from '../../services/readme.service';
 
 @Component({
   selector: 'app-readme',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadmeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readmeService: ReadmeService,
+  ) { }
 
   ngOnInit() {
+    this.readmeService.getReadme().subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
