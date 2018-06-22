@@ -4,7 +4,11 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: 'app/customer-statement/customer-statement.module#CustomerStatementModule'
+    loadChildren: './modules/customer-statement/customer-statement.module#CustomerStatementModule'
+  },
+  {
+    path: 'readme',
+    loadChildren: './modules/readme/readme.module#ReadmeModule'
   },
 ];
 

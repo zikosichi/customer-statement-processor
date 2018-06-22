@@ -5,7 +5,9 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 // Modules
-import { CustomerStatementModule } from './modules/customer-statement/customer-statement.module';
+import { AppRoutingModule } from './app-routing.module';
+// import { CustomerStatementModule } from './modules/customer-statement/customer-statement.module';
+// import { CustomerStatementModule } from './modules/customer-statement/customer-statement.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +15,9 @@ import { CustomerStatementModule } from './modules/customer-statement/customer-s
   ],
   imports: [
     BrowserModule,
-    CustomerStatementModule,
+    // CustomerStatementModule,
     RouterModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
