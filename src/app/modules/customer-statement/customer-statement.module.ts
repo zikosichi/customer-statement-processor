@@ -9,6 +9,8 @@ import { UploadStatementComponent } from './pages/upload-statement/upload-statem
     CommonModule,
     CustomerStatementRoutingModule
   ],
-  declarations: [UploadStatementComponent]
+  declarations: [
+    UploadStatementComponent
+  ]
 })
 export class CustomerStatementModule { }
