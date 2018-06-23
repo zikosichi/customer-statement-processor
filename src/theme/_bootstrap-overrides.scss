@@ -9,3 +9,9 @@
   color: $rb-blue;
   font-weight: 400;
 }
+
+// Table
+.table thead th {
+  border-top: 0;
+  border-bottom-width: 1px;
+}

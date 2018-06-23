@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CustomerStatementRoutingModule } from './customer-statement-routing.module';
 import { UploadStatementComponent } from './pages/upload-statement/upload-statement.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { ReportComponent } from './components/report/report.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
   ],
   declarations: [
     UploadStatementComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    ReportComponent
   ]
 })
 export class CustomerStatementModule { }
