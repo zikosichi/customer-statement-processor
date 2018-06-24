@@ -3,6 +3,7 @@
 html, body {
   @import './theme/bootstrap-overrides';
   @import './theme/tooltip';
+  @import './theme/markdown';
 
   color: map-get($rb-dark, 2);
   background-color: map-get($rb-light, 2);
