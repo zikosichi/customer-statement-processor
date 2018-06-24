@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener, HostBinding } from '@angular/core';
 
 // Animations
 import { slideUpAnimation } from '../../../../shared/animations/animations';
@@ -20,18 +20,20 @@ export class FileSelectComponent {
   isFileOver: boolean = false;
   errorMessage: string = '';
 
-  @HostListener('drop', ['$event']) public onDrop(evt) {
-    evt.preventDefault();
-    evt.stopPropagation();
-    const file = evt.dataTransfer.files[0];
-    console.log(file);
+  @HostListener('drop', ['$event']) onDrop(e: any) {
+    e.preventDefault();
+    this.isFileOver = false;
+    this.emitFileEvent(e.dataTransfer.files[0]);
   }
 
-  @HostListener('dragover', ['$event']) public onDragOver(evt) {
+  @HostListener('dragover', ['$event'])
+  onDragOver(e: Event) {
+    e.preventDefault();
     this.isFileOver = true;
   }
 
-  @HostListener('dragleave', ['$event']) public onDragLeave(evt) {
+  @HostListener('dragleave', ['$event'])
+  onDragLeave() {
     this.isFileOver = false;
   }
 
@@ -41,8 +43,13 @@ export class FileSelectComponent {
    * On file select
    */
   onFileChange(e: any): void {
-    const file: File = e.target.files[0];
+    this.emitFileEvent(e.target.files[0]);
+  }
 
+  /**
+   * Emit file event
+   */
+  emitFileEvent(file: File) {
     if (this.acceptedFormats.includes(file.type)) {
       this.statementSelect.emit(file);
     } else {
