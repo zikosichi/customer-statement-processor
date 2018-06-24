@@ -20,6 +20,9 @@
   </div>
 </div>
 
-<div class="card border-0 box-shadow mt-3">
-  <app-report></app-report>
+<div class="card border-0 box-shadow mt-3"
+     *ngIf="statements.length"
+     [@fadeUpAnimation]>
+  <app-report [statements]="statements">
+  </app-report>
 </div>

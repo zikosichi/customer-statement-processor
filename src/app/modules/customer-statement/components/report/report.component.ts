@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+// Models
+import { Statement } from '../../models/statement';
+
 
 @Component({
   selector: 'app-report',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportComponent implements OnInit {
 
+  @Input()
+  statements: Statement[] = [];
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.statements);
   }
 
 }

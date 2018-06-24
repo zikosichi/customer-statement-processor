@@ -7,14 +7,19 @@ import { Statement } from '../../models/statement';
 // Services
 import { FileParserService } from '../../services/file-parser.service';
 
+// Animations
+import { fadeUpAnimation } from '../../../../shared/animations/animations';
+
 @Component({
   selector: 'app-upload-statement',
   templateUrl: './upload-statement.component.html',
   styleUrls: ['./upload-statement.component.scss'],
+  animations: [fadeUpAnimation],
 })
 export class UploadStatementComponent {
 
   selectedFile: File;
+  statements: Statement[] = [];
 
   constructor(
     private fileParserService: FileParserService,
@@ -47,7 +52,7 @@ export class UploadStatementComponent {
       }
 
       parserFunction.subscribe(res => {
-        console.log(res);
+        this.statements = res;
       });
     };
 

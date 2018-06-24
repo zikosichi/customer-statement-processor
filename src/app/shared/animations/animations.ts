@@ -58,3 +58,22 @@ export const slideUpAnimation =
       }))
     ])
   ]);
+
+export const fadeUpAnimation =
+  // trigger name for attaching this animation to an element using the [@triggerName] syntax
+  trigger('fadeUpAnimation', [
+    state('in', style({ transform: 'translateY(0px)' })),
+    transition('void => *', [
+      style({
+        transform: 'translateY(20px)',
+        opacity: 0,
+      }),
+      animate('500ms cubic-bezier(0.165, 0.84, 0.44, 1)')
+    ]),
+    transition('* => void', [
+      animate('500ms cubic-bezier(0.165, 0.84, 0.44, 1)', style({
+        transform: 'translateY(20px)',
+        opacity: 0,
+      }))
+    ])
+  ]);
