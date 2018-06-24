@@ -7,16 +7,41 @@
       <th scope="col border-0">Start Balance</th>
       <th scope="col border-0">Mutation</th>
       <th scope="col border-0">End Balance</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let statement of statements">
-      <td>{{statement.reference}}</td>
+      <td [class.is-invalid-cell]="statement.isDuplicate">
+        <span [class.is-invalid-text]="statement.isDuplicate">
+          {{statement.reference}}
+        </span>
+      </td>
       <td>{{statement.accountNumber}}</td>
       <td>{{statement.description}}</td>
-      <td>{{statement.startBalance}}</td>
-      <td>{{statement.mutation}}</td>
-      <td>{{statement.endBalance}}</td>
+      <td>
+        <span [class.is-invalid-text]="statement.isInvalidBalance">
+          {{statement.startBalance}}
+        </span>
+      </td>
+      <td>
+        <span [class.is-invalid-text]="statement.isInvalidBalance">
+          {{statement.mutation}}
+        </span>
+      </td>
+      <td>
+        <span [class.is-invalid-text]="statement.isInvalidBalance">
+          {{statement.endBalance}}
+        </span>
+      </td>
+      <td>
+        <i class="fas fa-exclamation-triangle text-danger"
+            *ngIf="statement.isInvalidBalance">
+        </i>
+        <i class="fas fa-exclamation-triangle text-danger"
+            *ngIf="statement.isDuplicate">
+        </i>
+      </td>
     </tr>
   </tbody>
 </table>
