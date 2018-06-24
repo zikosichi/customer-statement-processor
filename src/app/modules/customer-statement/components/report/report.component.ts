@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 // Models
 import { Statement } from '../../models/statement';
@@ -9,7 +9,7 @@ import { Statement } from '../../models/statement';
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.scss']
 })
-export class ReportComponent implements OnInit {
+export class ReportComponent {
 
   _statements: Statement[] = [];
   @Input()
@@ -21,21 +21,16 @@ export class ReportComponent implements OnInit {
     return this._statements;
   }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   /**
    * Validate statements
    */
   validateStatements() {
-    // sort by reference to find duplicates
+    // sort by reference so it's easy for the user to capture duplicates
     this.statements.sort((a, b) => a.reference > b.reference ? 1 : -1);
 
     this.statements.forEach((s, index) => {
       // validate balance
-      s.isInvalidBalance = s.startBalance + s.mutation !== s.endBalance;
+      s.isInvalidBalance = (s.startBalance + s.mutation).toFixed(12) !== s.endBalance.toFixed(12);
 
       // validate duplicates
       s.isDuplicate = this.statements.filter(statement => statement.reference === s.reference).length > 1;
