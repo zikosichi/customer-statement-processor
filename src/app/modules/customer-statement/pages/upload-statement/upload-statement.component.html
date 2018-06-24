@@ -13,7 +13,8 @@
       </ul>
     </div>
     <div class="col mt-3 mt-md-0">
-      <app-file-upload></app-file-upload>
+      <app-file-select [acceptedFormats]="['text/csv', 'text/xml']">
+      </app-file-select>
     </div>
   </div>
 </div>

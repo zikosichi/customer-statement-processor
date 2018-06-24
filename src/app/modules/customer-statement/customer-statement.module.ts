@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CustomerStatementRoutingModule } from './customer-statement-routing.module';
 import { UploadStatementComponent } from './pages/upload-statement/upload-statement.component';
-import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { FileSelectComponent } from './components/file-select/file-select.component';
 import { ReportComponent } from './components/report/report.component';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { ReportComponent } from './components/report/report.component';
   ],
   declarations: [
     UploadStatementComponent,
-    FileUploadComponent,
+    FileSelectComponent,
     ReportComponent
   ]
 })

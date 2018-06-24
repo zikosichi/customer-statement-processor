@@ -1,5 +1,5 @@
-<div class="statement-select text-center">
-
+<div class="statement-select text-center"
+     [class.statement-select--has-error]="isError">
   <label class="btn btn-danger mt-4"
          for="file-select">
     <i class="fas fa-upload mr-2"></i>
@@ -10,7 +10,12 @@
          class="d-none"
          (change)="onFileChange($event)">
 
-  <p class="mt-2">
+  <p class="mt-2 mb-0">
     or drop it here
   </p>
+
+  <small *ngIf="errorMessage"
+     class="text-danger">
+    {{errorMessage}}
+  </small>
 </div>
