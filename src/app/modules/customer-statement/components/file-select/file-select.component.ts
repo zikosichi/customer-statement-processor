@@ -1,11 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
+
+// Services
 import { FileParserService } from '../../services/file-parser.service';
 
+// Animations
+import { slideUpAnimation } from '../../../../shared/animations/animations';
 
 @Component({
   selector: 'app-file-select',
   templateUrl: './file-select.component.html',
-  styleUrls: ['./file-select.component.scss']
+  styleUrls: ['./file-select.component.scss'],
+  animations: [slideUpAnimation]
 })
 export class FileSelectComponent implements OnInit {
 

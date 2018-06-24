@@ -9,7 +9,7 @@ import { ReportComponent } from './components/report/report.component';
 @NgModule({
   imports: [
     CommonModule,
-    CustomerStatementRoutingModule
+    CustomerStatementRoutingModule,
   ],
   declarations: [
     UploadStatementComponent,
