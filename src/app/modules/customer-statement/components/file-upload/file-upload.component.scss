@@ -1,12 +1,12 @@
 @import '../../../../../theme/variables';
 
-.file-upload {
+.statement-select {
   height: 100%;
   display: flex;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px dashed map-get($rb-light, 4);
-  background-color: map-get($rb-light, 2);
+  border: 1px dashed rgba($rb-blue, .1);
+  background-color: rgba($rb-blue, .03);
 }
