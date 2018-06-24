@@ -12,7 +12,7 @@ export class ReadmeService {
   ) { }
 
   getReadme() {
-    return this.http.get('https://raw.githubusercontent.com/zikosichi/question-answer/master/README.md', {
+    return this.http.get('https://raw.githubusercontent.com/zikosichi/customer-statement-processor/master/README.md', {
       responseType: 'text'
     });
   }
