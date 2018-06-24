@@ -11,6 +11,11 @@
   background-color: rgba($rb-blue, .03);
   transition: all .6s;
 
+  &--file-over {
+    border: 1px dashed rgba($rb-blue, .3);
+    background-color: rgba($rb-blue, .09);
+  }
+
   &--has-error {
     border: 1px dashed rgba($rb-red, .4);
     background-color: rgba($rb-red, .2);

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 // Animations
 import { slideUpAnimation } from '../../../../shared/animations/animations';
@@ -17,7 +17,23 @@ export class FileSelectComponent {
   @Output()
   statementSelect: EventEmitter<File> = new EventEmitter();
 
+  isFileOver: boolean = false;
   errorMessage: string = '';
+
+  @HostListener('drop', ['$event']) public onDrop(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    const file = evt.dataTransfer.files[0];
+    console.log(file);
+  }
+
+  @HostListener('dragover', ['$event']) public onDragOver(evt) {
+    this.isFileOver = true;
+  }
+
+  @HostListener('dragleave', ['$event']) public onDragLeave(evt) {
+    this.isFileOver = false;
+  }
 
   constructor() { }
 
