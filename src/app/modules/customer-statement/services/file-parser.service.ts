@@ -16,7 +16,7 @@ export class FileParserService {
    *
    * @param {*} csv
    */
-  parseCsv(csv) {
+  parseCsv(csv): Observable<Statement[]> {
     const lines = csv.split('\n');
     const headers = lines[0].split(',');
     let result = [];
