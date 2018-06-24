@@ -18,7 +18,6 @@ export class FileSelectComponent {
   statementSelect: EventEmitter<File> = new EventEmitter();
 
   errorMessage: string = '';
-  isError: boolean = false;
 
   constructor() { }
 
@@ -41,9 +40,7 @@ export class FileSelectComponent {
   displayFormatError(msg: string) {
     this.errorMessage = msg;
 
-    this.isError = true;
     setTimeout(() => {
-      this.isError = false;
       this.errorMessage = '';
     }, 3000);
   }

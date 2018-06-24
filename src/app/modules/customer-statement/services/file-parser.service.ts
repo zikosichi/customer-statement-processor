@@ -13,8 +13,6 @@ export class FileParserService {
 
   /**
    * Convert CSV to JSON
-   *
-   * @param {*} csv
    */
   parseCsv(csv): Observable<Statement[]> {
     const lines = csv.split('\n');
@@ -47,8 +45,6 @@ export class FileParserService {
 
   /**
    * Convert XML to JSON
-   *
-   * @param {*} xml
    */
   parseXml(xml): Observable<Statement[]> {
     return new Observable((observer) => {
