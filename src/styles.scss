@@ -3,15 +3,16 @@
 html, body {
   @import './theme/bootstrap-overrides';
 
-  color: map-get($rb-dark, 3);
+  color: map-get($rb-dark, 2);
   background-color: map-get($rb-light, 2);
   font-weight: 200;
-  font-size: 18px;
+  font-size: 16px;
   font-family: $rb-font-secondary;
 }
 
 h1, h2, h3, h4, h5 {
   font-weight: 600;
+  color: map-get($rb-dark, 3) - 10;
   font-family: $rb-font-primary;
 }
 
