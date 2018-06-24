@@ -6,10 +6,6 @@
   }
 }
 
-.is-invalid-cell {
-  // background: linear-gradient(90deg, rgba($rb-red, .1), rgba($rb-red, 0));
-}
-
 .is-invalid-text {
   position: relative;
   background-color: $rb-red;
@@ -17,15 +13,4 @@
   padding: 2px 5px;
   border-radius: 3px;
   font-weight: bold;
-
-  // &::after {
-  //   content: '';
-  //   position: absolute;
-  //   height: 3px;
-  //   width: 100%;
-  //   bottom: -5px;
-  //   display: block;
-  //   border-radius: 15%;
-  //   background-color: $rb-red;
-  // }
 }

@@ -56,9 +56,9 @@ export class FileParserService {
         const records = Object.values(data.records.record)
           .map((r) => {
             return {
-              reference: r['$']['reference'],
-              accountNumber: r['accountNumber'],
-              description: r['description'],
+              reference: r['$']['reference'].toString(),
+              accountNumber: r['accountNumber'].toString(),
+              description: r['description'].toString(),
               startBalance: +r['startBalance'],
               mutation: +r['mutation'],
               endBalance: +r['endBalance'],

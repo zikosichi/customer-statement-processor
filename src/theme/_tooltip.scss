@@ -1,0 +1,32 @@
+@import './variables';
+
+[tooltip] {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: attr(tooltip);
+    position: absolute;
+    left: 50%;
+    top: -6px;
+    transition: opacity .2s;
+    transform: translateX(-50%) translateY(-100%);
+    background: rgba(map-get($rb-dark, 4), .9);
+    text-align: center;
+    font-family: $rb-font-secondary;
+    color: map-get($rb-light, 1);
+    font-size: 12px;
+    min-width: 150px;
+    border-radius: 5px;
+    pointer-events: none;
+    padding: 10px;
+    z-index: 99;
+    opacity: 0;
+  }
+}

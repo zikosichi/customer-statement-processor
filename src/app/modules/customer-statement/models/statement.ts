@@ -5,6 +5,6 @@ export class Statement {
   startBalance: number;
   mutation: number;
   endBalance: number;
-  isInvalidBalance: boolean;
-  isDuplicate: boolean;
+  isInvalidBalance?: boolean;
+  isDuplicate?: boolean;
 }

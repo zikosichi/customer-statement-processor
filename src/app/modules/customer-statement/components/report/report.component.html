@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let statement of statements">
-      <td [class.is-invalid-cell]="statement.isDuplicate">
+      <td>
         <span [class.is-invalid-text]="statement.isDuplicate">
           {{statement.reference}}
         </span>
@@ -35,11 +35,13 @@
         </span>
       </td>
       <td>
-        <i class="fas fa-exclamation-triangle text-danger"
-            *ngIf="statement.isInvalidBalance">
+        <i class="fas fa-exclamation-triangle text-danger mr-2"
+           tooltip="The end balance is invalid"
+           *ngIf="statement.isInvalidBalance">
         </i>
-        <i class="fas fa-exclamation-triangle text-danger ml-2"
-            *ngIf="statement.isDuplicate">
+        <i class="fas fa-exclamation-triangle text-danger"
+           tooltip="Transaction reference should be unique"
+           *ngIf="statement.isDuplicate">
         </i>
       </td>
     </tr>
