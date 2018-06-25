@@ -2,7 +2,6 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { FileParserService } from './file-parser.service';
 import { Statement } from '../models/statement';
-import { Observable } from 'rxjs';
 import 'rxjs/add/observable/of';
 
 describe('UtilsService', () => {
