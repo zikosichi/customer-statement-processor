@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FileSelectComponent } from './file-select.component';
 
-describe('FileUploadComponent', () => {
+describe('FileSelectComponent', () => {
   let component: FileSelectComponent;
   let fixture: ComponentFixture<FileSelectComponent>;
 

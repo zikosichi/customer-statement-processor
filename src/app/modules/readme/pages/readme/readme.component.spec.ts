@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReadmeComponent } from './readme.component';
+import { MarkdownModule } from 'angular2-markdown';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ReadmeComponent', () => {
   let component: ReadmeComponent;
@@ -8,9 +10,10 @@ describe('ReadmeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReadmeComponent ]
+      declarations: [ReadmeComponent],
+      imports: [MarkdownModule, HttpClientModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
