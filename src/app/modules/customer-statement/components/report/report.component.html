@@ -1,3 +1,27 @@
+<div class="p-3"
+     *ngIf="duplicatesCount || invalidBalanceCount">
+  <div class="alert alert-danger mb-0" role="alert">
+    <ul class="mb-0 pl-3">
+      <li *ngIf="duplicatesCount">
+        {{duplicatesCount}} statements has same reference number. It should be unique.
+      </li>
+      <li *ngIf="invalidBalanceCount">
+        {{invalidBalanceCount}} statements found with invalid balance.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="p-3"
+     *ngIf="!duplicatesCount && !invalidBalanceCount">
+  <div class="alert alert-success mb-0" role="alert">
+    <i class="fas fa-check mr-2"></i>
+    The statement is valid
+  </div>
+</div>
+
+<hr class="m-0">
+
 <table class="table mb-0">
   <thead>
     <tr>

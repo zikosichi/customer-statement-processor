@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div class="card border-0 box-shadow mt-3 mb-3"
+<div class="card border-0 box-shadow mt-3 mb-5"
      *ngIf="statements.length"
      [@fadeUpAnimation]>
   <div class="card-header bg-white">
@@ -29,7 +29,7 @@
       <small class="ml-auto text-muted font-weight-light">{{selectedFile.size | number}}kb</small>
     </div>
   </div>
-  <div class="card-body">
+  <div class="card-body p-0">
     <app-report [statements]="statements">
     </app-report>
   </div>
